@@ -24,6 +24,5 @@ public abstract class Effet {
         return this.message;
     }
     
-    public void executerEffet() {
-   }
+    public abstract void executerEffet(Bandeau monBandeau);
 }
