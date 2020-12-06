@@ -12,16 +12,42 @@ public class Main{
         Color back = monBandeau.getBackground();
         Color fore = monBandeau.getForeground();
         
-        monBandeau.setMessage("Helloworld!");
+        monBandeau.setMessage("COUCOU");
 	monBandeau.sleep(1000);
         
-        EffetZoom zoom = new EffetZoom("Hello World!1", monBandeau);
-        zoom.executerEffet(monBandeau);
+        Scenario scenario1 = new Scenario("Scenario 1");
+        /**
+        scenario1.ajouterEffetXFois(new EffetCouleurMessage(monBandeau.getMessage(), monBandeau, true, Color.YELLOW, false, Color.YELLOW, Color.YELLOW), 1);
+        scenario1.ajouterEffetXFois(new EffetCouleurFond(monBandeau.getMessage(), monBandeau, true, Color.GRAY, false, Color.YELLOW, Color.YELLOW), 1);
+        scenario1.ajouterEffetXFois(new EffetCouleurMessage(monBandeau.getMessage(), monBandeau, true, Color.BLUE, true, Color.WHITE, Color.RED), 2);
+        scenario1.ajouterEffetXFois(new EffetCouleurFond(monBandeau.getMessage(), monBandeau, true, Color.YELLOW, true, Color.GREEN, Color.MAGENTA), 2);
+        scenario1.ajouterEffetXFois(new EffetCouleurFond(monBandeau.getMessage(), monBandeau, true, Color.GRAY, false, Color.GREEN, Color.MAGENTA), 1);
+        scenario1.ajouterEffetXFois(new EffetRotation(monBandeau.getMessage(),monBandeau,true,false,false,0, false), 1);
         
-        EffetCouleur couleur = new EffetCouleur("Hello world!2", monBandeau, Color.YELLOW);
-        couleur.executerEffet(monBandeau);
+        scenario1.ajouterEffetXFois(new EffetRotation(monBandeau.getMessage(),monBandeau,false,true,true,Math.PI/2, false), 3);
+        scenario1.ajouterEffetXFois(new EffetRotation(monBandeau.getMessage(),monBandeau,false,false,true,Math.PI/2, false), 1);
+        scenario1.ajouterEffetXFois(new EffetRotation(monBandeau.getMessage(),monBandeau,false,false,false,Math.PI/2, true), 1);
+        scenario1.ajouterEffetXFois(new EffetZoom(monBandeau.getMessage(),monBandeau,true,false), 1);
+        scenario1.ajouterEffetXFois(new EffetZoom(monBandeau.getMessage(),monBandeau,false,true), 1);
+        scenario1.executerScenario(monBandeau);
+        */
         
-        EffetRotation rota = new EffetRotation("Hello world!3", monBandeau);
-        rota.executerEffet(monBandeau);
+        Scenario scenario2 = new Scenario("Scenario 2 ");
+        
+        scenario2.ajouterEffetXFois(new EffetCouleurFond(monBandeau.getMessage(), monBandeau, true, Color.GRAY, false, Color.GREEN, Color.MAGENTA), 1);
+        scenario2.ajouterEffetXFois(new EffetCouleurMessage(monBandeau.getMessage(), monBandeau, true, Color.WHITE, false, Color.YELLOW, Color.YELLOW), 1);
+        scenario2.ajouterEffetXFois(new EffetRotation(monBandeau.getMessage(),monBandeau,false,true,true,Math.PI/2, true), 1);
+        scenario2.ajouterEffetXFois(new EffetCouleurMessage(monBandeau.getMessage(), monBandeau, true, Color.BLUE, false, Color.YELLOW, Color.YELLOW), 1);
+        scenario2.ajouterEffetXFois(new EffetRotation(monBandeau.getMessage(),monBandeau,false,true,true,Math.PI/2, true), 1);
+        scenario2.ajouterEffetXFois(new EffetCouleurMessage(monBandeau.getMessage(), monBandeau, true, Color.WHITE, false, Color.YELLOW, Color.YELLOW), 1);
+        scenario2.ajouterEffetXFois(new EffetRotation("YOUPI",monBandeau,false,true,true,Math.PI/2, true), 1);
+        scenario2.ajouterEffetXFois(new EffetCouleurMessage(monBandeau.getMessage(), monBandeau, true, Color.RED, false, Color.YELLOW, Color.YELLOW), 1);
+        scenario2.ajouterEffetXFois(new EffetRotation("YOUPI",monBandeau,false,false,true,Math.PI/2, false), 1);
+        scenario2.ajouterEffetXFois(new EffetZoom("Vive la France",monBandeau,true,false), 2);
+        scenario2.ajouterEffetXFois(new EffetCouleurFond(monBandeau.getMessage(), monBandeau, true, Color.YELLOW, true, Color.GREEN, Color.MAGENTA), 2);
+        scenario2.ajouterEffetXFois(new EffetRotation("Vive la France",monBandeau,true,false,false,Math.PI/2, true), 1);
+        
+        scenario2.executerScenario(monBandeau);
+        monBandeau.close();
     }
 }

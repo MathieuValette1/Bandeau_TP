@@ -22,13 +22,15 @@ public class Scenario {
         this.intitule = intitule;
     }
     
-    public void ajouterEffet(Effet e){
-        listeEffet.add(e);
+    public void ajouterEffetXFois(Effet e, int nbDeFois){
+        for (int i=0; i<nbDeFois; i++){
+            listeEffet.add(e);
+        }
     }
     
     public void executerScenario(Bandeau monBandeau){
         for (Effet e: listeEffet){
-           
+           e.executerEffet(monBandeau);
         }
     }
     
